@@ -1,0 +1,55 @@
+#form-contact input, #form-contact label, #form-contact textarea, #form-contact select{
+	width:calc(100% - 1em);
+	margin:0!important;
+}
+#form-contact textarea{
+	height:150px;
+}
+#form-contact label{
+	display:inline-block;
+	text-align:left
+}
+#form-contact .content-form{
+	display:grid;
+	grid-template-columns:1fr 2fr;
+	grid-gap:1em;
+}
+#form-contact .container-button{
+	text-align: center;
+	grid-column: span 2;
+}
+@media screen and (max-width:568px){
+	#form-contact .content-form{
+		grid-template-columns:1fr;
+	}
+	#form-contact .content-form > *{
+		grid-column: 1;
+	}
+	#form-contact .content-form input,#form-contact .content-form label{
+		text-align:center;
+	}
+}
+
+
+#cl_modal{
+	text-align: center;
+	width:calc(100% - 2em);
+	max-width:600px;
+	height:auto;
+	max-height:300px;
+	position:fixed!important;
+	top:-300px;
+	left:50%;
+	z-index: 5;
+	transform: translate(-50%, -50%);
+	background-color: #FFF;
+	border: solid 1px #666;
+	box-shadow: 5px 10px 10px #666;
+	transition: all .4s;
+	position: relative;
+}
+#cl_modal.openModal{
+	top:50%;
+	transition: all .4s;
+	@keyframes fx {
+}
