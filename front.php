@@ -20,29 +20,7 @@ function cl_add_front() {
 				<input type="hidden" name="action" value="formContact">
 				<?php wp_nonce_field('nonceformContact', 'nonceformContact'); ?>
 				<div class="content-form">
-					<label for="showroom">Sélectionner votre showroom :</label>
-					<select id="showroom" name="showroom" required="required">
-						<option value="">
-							Selectionnez votre showroom
-						</option>
-					<?php
-					$args = array(
-						'posts_per_page'   => -1,
-						'post_type'        => 'showroom',
-						'orderby'          => 'title',
-						'sort_order'       => 'ASC',
-						'post_status'      => 'publish',
-					);
-					$myposts = get_posts( $args );
-					global $post;
-					foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-						<option value="<?php the_field("email"); ?>"><?php the_field("ville"); ?></option>
-					<?php
-					endforeach;
-					wp_reset_postdata();
-					?>
-					</select>
-
+					
 					<label for="name">Votre nom :</label>
 					<input type="text" name="name" id="name" required="required" placeholder="nom*">
 
@@ -55,8 +33,8 @@ function cl_add_front() {
 					<label for="phone">Votre numéro de téléphone :</label>
 					<input type="tel" name="phone" id="phone" required="required" placeholder="téléphone*" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$">
 
-					<label for="file">Envoyer un fichier (image ou pdf) :</label>
-					<input type="file" name="file" id="file" placeholder="votre fichier" accept="image/*, application/pdf">
+					<!--<label for="file">Envoyer un fichier (image ou pdf) :</label>
+					<input type="file" name="file" id="file" placeholder="votre fichier" accept="image/*, application/pdf">-->
 
 					<label for="comment">Votre message :</label>
 					<textarea name="comment" id="comment" placeholder="message" required="required"></textarea>

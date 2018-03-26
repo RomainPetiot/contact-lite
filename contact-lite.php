@@ -2,7 +2,7 @@
 /**
  * Plugin name: Contact Lite
  * Plugin URI: https://github.com/RomainPetiot/contact-lite
- * Description: Formulaire de contact
+ * Description: Formulaire de contact lite. Le shortcode : [contact-lite]
  * Author : Romain Petiot
  * Author URI: https://www.romainpetiot.com
  * Contributors:Romain Petiot

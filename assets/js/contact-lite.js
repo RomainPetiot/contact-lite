@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					text = '<p>Votre message a été envoyé,<br>il sera traité rapidement.</p>';
 					cl_openModal(el, text);
 			    }
+				document.getElementById('cl_submitBtn').innerHTML = 'Envoyer';
 				document.getElementById('cl_submitBtn').disabled = false;
 			};
 			xhr.send(formData);
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function cl_recaptchaCallback() {
-	$('#submitBtn').removeAttr('disabled');
+	document.getElementById('cl_submitBtn').disabled = false;
 };
 
 function cl_openModal(el, text = ""){
@@ -38,6 +39,9 @@ function cl_closeModal(){
 	cl_removeClass(el, 'openModal');
 	document.location.href = home_url;
 }
+
+
+/*HELPER hasclass addclass ans removreclass */
 
 function cl_hasClass(el, className) {
   if (el.classList)
